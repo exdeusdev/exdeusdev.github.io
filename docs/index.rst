@@ -1,124 +1,251 @@
-Getting Started with Sphinx
-===========================
+Read the Docs: Documentation Simplified
+=======================================
 
 .. meta::
-   :description lang=en: Get started writing technical documentation with Sphinx and publishing to Read the Docs.
+   :description lang=en: Automate building, versioning, and hosting of your technical documentation continuously on Read the Docs.
 
+`Read the Docs`_ simplifies software documentation
+by building, versioning, and hosting of your docs, automatically.
+Think of it as *Continuous Documentation*.
 
-Sphinx is a powerful documentation generator that
-has many great features for writing technical documentation including:
+Never out of sync |:arrows_counterclockwise:|
+    Whenever you push code to your favorite version control system,
+    whether that is Git, Mercurial, Bazaar, or Subversion,
+    Read the Docs will automatically build your docs
+    so your code and documentation are always up-to-date.
+    Read more about :doc:`/webhooks`.
 
-* Generate web pages, printable PDFs, documents for e-readers (ePub),
-  and more all from the same sources
-* You can use reStructuredText or :ref:`Markdown <intro/getting-started-with-sphinx:Using Markdown with Sphinx>`
-  to write documentation
-* An extensive system of cross-referencing code and documentation
-* Syntax highlighted code samples
-* A vibrant ecosystem of first and third-party :doc:`extensions <sphinx:usage/extensions/index>`
+Multiple versions |:card_index_dividers:|
+    Read the Docs can host and build multiple versions of your docs
+    so having a 1.0 version of your docs and a 2.0 version
+    of your docs is as easy as having a separate branch or tag in your version control system.
+    Read more about :doc:`/versions`.
 
-Quick start video
------------------
+Open Source and User Focused |:heartbeat:|
+    Our code is free and `open source <https://github.com/readthedocs/>`_.
+    :doc:`Our company </about>` is bootstrapped and 100% user focused.
+    |org_brand| hosts documentation for over 100,000 large 
+    and small open source projects,
+    in almost every human and computer language.
+    |com_brand| supports hundreds of organizations with product and internal documentation.
 
-This screencast will help you get started or you can
-:ref:`read our guide below <intro/getting-started-with-sphinx:Quick start>`.
+.. _Read the docs: https://readthedocs.org/
 
-.. raw:: html
+You can find out more about our all the :doc:`/features` in these pages.
 
-    <div style="text-align: center; margin-bottom: 2em;">
-    <iframe width="100%" height="350" src="https://www.youtube-nocookie.com/embed/oJsUvBQyHBs?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-    </div>
-
-
-Quick start
+First steps
 -----------
 
-Assuming you have Python already, :doc:`install Sphinx <sphinx:usage/installation>`:
+Are you new to software documentation
+or are you looking to use your existing docs with Read the Docs?
+Learn about documentation authoring tools such as Sphinx and MkDocs
+to help you create fantastic documentation for your project.
 
-.. prompt:: bash $
+* **Getting started**:
+  :doc:`With Sphinx </intro/getting-started-with-sphinx>` |
+  :doc:`With MkDocs </intro/getting-started-with-mkdocs>` |
+  :doc:`Feature Overview </features>` |
+  :doc:`/choosing-a-site`
 
-    pip install sphinx
-
-Create a directory inside your project to hold your docs:
-
-.. prompt:: bash $
-
-    cd /path/to/project
-    mkdir docs
-
-Run ``sphinx-quickstart`` in there:
-
-.. prompt:: bash $
-
-    cd docs
-    sphinx-quickstart
-
-This quick start will walk you through creating the basic configuration; in most cases, you
-can just accept the defaults. When it's done, you'll have an ``index.rst``, a
-``conf.py`` and some other files. Add these to revision control.
-
-Now, edit your ``index.rst`` and add some information about your project.
-Include as much detail as you like (refer to the :doc:`reStructuredText syntax <sphinx:usage/restructuredtext/basics>`
-or `this template`_ if you need help). Build them to see how they look:
-
-.. prompt:: bash $
-
-    make html
-
-Your ``index.rst`` has been built into ``index.html``
-in your documentation output directory (typically ``_build/html/index.html``).
-Open this file in your web browser to see your docs.
-
-.. figure:: /_static/images/first-steps/sphinx-hello-world.png
-   :figwidth: 500px
-   :target: /_static/images/first-steps/sphinx-hello-world.png
-   :align: center
-
-   Your Sphinx project is built
-
-Edit your files and rebuild until you like what you see, then commit your changes and push to your public repository.
-Once you have Sphinx documentation in a public repository, you can start using Read the Docs
-by :doc:`importing your docs </intro/import-guide>`.
-
-.. warning::
-
-   We strongly recommend to :ref:`pin the Sphinx version <guides/specifying-dependencies:Specifying Dependencies>`
-   used for your project to build the docs to avoid potential future incompatibilities.
-
-.. _this template: https://www.writethedocs.org/guide/writing/beginners-guide-to-docs/#id1
-
-Using Markdown with Sphinx
---------------------------
-
-You can use Markdown and reStructuredText in the same Sphinx project.
-We support this natively on Read the Docs, and you can do it locally:
-
-.. prompt:: bash $
-
-    pip install recommonmark
-
-Then in your ``conf.py``:
-
-.. code-block:: python
-
-   extensions = ['recommonmark']
-
-.. warning:: Markdown doesn't support a lot of the features of Sphinx,
-          like inline markup and directives. However, it works for
-          basic prose content. reStructuredText is the preferred
-          format for technical documentation, please read `this blog post`_
-          for motivation.
-
-.. _this blog post: https://www.ericholscher.com/blog/2016/mar/15/dont-use-markdown-for-technical-docs/
+* **Importing your existing documentation**:
+  :doc:`Import guide </intro/import-guide>`
 
 
-External resources
-------------------
+.. toctree::
+   :maxdepth: 2
+   :hidden:
+   :caption: First steps
 
-Here are some external resources to help you learn more about Sphinx.
+   /intro/getting-started-with-sphinx
+   /intro/getting-started-with-mkdocs
 
-* `Sphinx documentation`_
-* :doc:`RestructuredText primer <sphinx:usage/restructuredtext/basics>`
-* `An introduction to Sphinx and Read the Docs for technical writers`_
+   /intro/import-guide
+   /features
+   /choosing-a-site
 
-.. _Sphinx documentation: https://www.sphinx-doc.org/
-.. _An introduction to Sphinx and Read the Docs for technical writers: https://www.ericholscher.com/blog/2016/jul/1/sphinx-and-rtd-for-writers/
+
+Getting started with Read the Docs
+-----------------------------------
+
+Learn more about configuring your automated documentation builds
+and some of the core features of Read the Docs.
+
+* **Overview of core features**:
+  :doc:`Incoming webhooks </webhooks>` |
+  :doc:`/custom_domains` |
+  :doc:`/versions` |
+  :doc:`/downloadable-documentation` |
+  :doc:`/hosting` |
+  :doc:`/server-side-search`
+
+* **Connecting with GitHub, BitBucket, or GitLab**:
+  :doc:`Connecting your VCS account </connected-accounts>` | 
+  :doc:`VCS webhooks </webhooks>`
+
+* **Read the Docs build process**:
+  :doc:`Configuration reference </config-file/index>` |
+  :doc:`Build process </builds>` |
+  :doc:`/badges` |
+
+* **Troubleshooting**:
+  :doc:`/support` |
+  :doc:`Frequently asked questions </faq>`
+
+.. toctree::
+   :maxdepth: 1
+   :hidden:
+   :caption: Getting started
+
+   /config-file/index
+   /webhooks
+   /custom_domains
+   /versions
+   /downloadable-documentation
+   /server-side-search
+   /hosting
+
+   /connected-accounts
+
+   /builds
+   /badges
+
+   /support
+   /faq
+
+
+Step-by-step Guides
+-------------------
+
+These guides will help walk you through specific use cases
+related to Read the Docs itself, documentation tools like Sphinx and MkDocs
+and how to write successful documentation.
+
+* :doc:`/guides/tools`
+* :doc:`/guides/platform`
+* :doc:`/guides/commercial`
+
+.. toctree::
+ :maxdepth: 2
+ :hidden:
+ :caption: Step-by-step Guides
+
+ /guides/tools
+ /guides/platform
+ /guides/commercial
+
+Advanced features of Read the Docs
+----------------------------------
+
+Read the Docs offers many advanced features and options.
+Learn more about these integrations and how you can get the most
+out of your documentation and Read the Docs.
+
+* **Advanced project configuration**:
+  :doc:`subprojects` |
+  :doc:`Single version docs <single_version>`
+
+* **Multi-language documentation**:
+  :doc:`Translations and localization <localization>`
+
+.. TODO: Move user-defined to Getting started, they are core functionality
+
+* **Redirects**:
+  :doc:`User defined redirects <user-defined-redirects>` |
+  :doc:`Automatic redirects <automatic-redirects>`
+
+* **Versions**
+  :doc:`Automation rules <automation-rules>`
+
+* **Topic specific guides**:
+  :doc:`How-to guides <guides/index>`
+
+* **Extending Read the Docs**:
+  :doc:`REST API <api/index>`
+
+.. toctree::
+   :maxdepth: 2
+   :hidden:
+   :glob:
+   :caption: Advanced features
+
+   subprojects
+   single_version
+
+   localization
+
+   user-defined-redirects
+   automatic-redirects
+
+   automation-rules
+
+
+   api/index
+
+
+The Read the Docs project and organization
+------------------------------------------
+
+Learn about Read the Docs, the project and the company,
+and find out how you can get involved and contribute to the development and success
+of Read the Docs and the larger software documentation ecosystem.
+
+* **Getting involved with Read the Docs**:
+  :doc:`Contributing <contribute>` |
+  :doc:`Development setup </development/standards>` |
+  :doc:`roadmap` |
+  :doc:`Code of conduct <code-of-conduct>`
+
+* **Policies & Process**:
+  :doc:`security` |
+  :doc:`Privacy policy <privacy-policy>` |
+  :doc:`Terms of service <terms-of-service>` |
+  :doc:`DMCA takedown policy <dmca/index>` |
+  :doc:`Policy for abandoned projects <abandoned-projects>` |
+  :doc:`Release notes & changelog <changelog>`
+
+* **The people and philosophy behind Read the Docs**:
+  :doc:`About Us </about>` |
+  :doc:`Team <team>` |
+  :doc:`Open source philosophy <open-source-philosophy>` |
+  :doc:`Our story <story>`
+
+* **Financial and material support**:
+  :doc:`advertising/index` |
+  :doc:`Sponsors <sponsors>`
+
+* **Read the Docs for Business**:
+  :doc:`Support and additional features <commercial/index>`
+
+* **Running your own version of Read the Docs**:
+  :doc:`Private installations <custom_installs/index>`
+
+
+.. toctree::
+   :maxdepth: 1
+   :hidden:
+   :caption: About Read the Docs
+
+   contribute
+   development/index
+   roadmap
+   gsoc
+   code-of-conduct
+
+   security
+   privacy-policy
+   terms-of-service
+   dmca/index
+   abandoned-projects
+   changelog
+
+   about
+   team
+   open-source-philosophy
+   story
+
+   advertising/index
+   sponsors
+
+   commercial/index
+
+   custom_installs/index
